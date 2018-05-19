@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archive on Adam Whitlock</title>
+    <link>https://adamwhitlock.com/archive/</link>
+    <description>Recent content in Archive on Adam Whitlock</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Dec 2021 22:31:55 -0600</lastBuildDate><atom:link href="https://adamwhitlock.com/archive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beginning again</title>
+      <link>https://adamwhitlock.com/archive/welcome/</link>
+      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://adamwhitlock.com/archive/welcome/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor eu nibh nec tincidunt. Mauris placerat urna aliquet tortor fringilla, eleifend tempor arcu efficitur. Aenean sed turpis id eros ultrices pulvinar. Pellentesque at posuere nibh. Etiam scelerisque dui aliquam velit sagittis, ac sagittis justo semper. Donec tempus, nibh in tincidunt fermentum, nulla enim finibus leo, eu tempus arcu metus at mauris. Cras vestibulum, velit vel dictum gravida, nulla ante molestie nulla, ac vulputate odio risus in tortor.</description>
+    </item>
+    
+  </channel>
+</rss>

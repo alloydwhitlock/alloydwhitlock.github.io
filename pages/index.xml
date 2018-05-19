@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Adam Whitlock</title>
+    <link>https://adamwhitlock.com/pages/</link>
+    <description>Recent content in Pages on Adam Whitlock</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Dec 2021 22:31:55 -0600</lastBuildDate><atom:link href="https://adamwhitlock.com/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coffee</title>
+      <link>https://adamwhitlock.com/coffee/</link>
+      <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
+      
+      <guid>https://adamwhitlock.com/coffee/</guid>
+      <description>I&amp;rsquo;ve got a coffee hobby. It&amp;rsquo;s big enough to have its own section.
+Snobbery I&amp;rsquo;ve been asked if I&amp;rsquo;m a coffee snob by a lot of people. I don&amp;rsquo;t think I am. I&amp;rsquo;ll drink any cup of coffee that is put in front of me. I&amp;rsquo;ve had my fair share of vending machine coffee and even know preset codes to get what I want. My Starbucks account usually has some money in it for an emergency cup.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://adamwhitlock.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://adamwhitlock.com/about/</guid>
+      <description>My name is Adam Whitlock and do things. I&amp;rsquo;ll update this soon enough with personal details. I have a copy of my manager README on GitHub, as a starter.
+Site Design &amp;amp; Details The site is hosted on Github, using Github Pages. Website code is statically generated, meaning that all content on this site was pre-generated and not rendered. There&amp;rsquo;s only one piece of Javascript used on this site, which is meant for expanding the menu for mobile users.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://adamwhitlock.com/contact/</link>
+      <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
+      
+      <guid>https://adamwhitlock.com/contact/</guid>
+      <description>If you want to personally reach out to me, please send an email to &amp;ldquo;adam [at] adamwhitlock [dot] com&amp;rdquo;. I don&amp;rsquo;t check my email daily, unless I&amp;rsquo;m expecting something, so please wait a day or two before sending a followup message. Additionally, check out my social media profiles below.
+ LinkedIn: /in/alloydwhitlock Github: alloydwhitlock Twitter: alloydwhitlock  If this is concerning something professional, like a business opportunity, please reach out using LinkedIn.</description>
+    </item>
+    
+  </channel>
+</rss>
