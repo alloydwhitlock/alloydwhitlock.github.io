@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Adam Whitlock</title>
-    <link>https://adamwhiutlock.com/posts/</link>
+    <link>https://adamwhitlock.com/posts/</link>
     <description>Recent content on Adam Whitlock</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://adamwhiutlock.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://adamwhitlock.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Starting</title>
-      <link>https://adamwhiutlock.com/posts/goisforlovers/</link>
+      <link>https://adamwhitlock.com/posts/goisforlovers/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://adamwhiutlock.com/posts/goisforlovers/</guid>
+      <guid>https://adamwhitlock.com/posts/goisforlovers/</guid>
       <description>Expectations should not be applied to this site. It’s simply a collection of my interests. In reality, the only expectation is that I write about whatever I feel like. It can be about my family, my job, my bike, or an idea.</description>
     </item>
     

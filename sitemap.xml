@@ -3,45 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adamwhiutlock.com/about/</loc>
+    <loc>https://adamwhitlock.com/about/</loc>
     <lastmod>2018-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adamwhiutlock.com/posts/goisforlovers/</loc>
+    <loc>https://adamwhitlock.com/posts/goisforlovers/</loc>
     <lastmod>2018-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adamwhiutlock.com/posts/</loc>
+    <loc>https://adamwhitlock.com/posts/</loc>
     <lastmod>2018-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adamwhiutlock.com/tags/about/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhiutlock.com/</loc>
+    <loc>https://adamwhitlock.com/tags/about/</loc>
     <lastmod>2018-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://adamwhiutlock.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhiutlock.com/tags/helloworld/</loc>
+    <loc>https://adamwhitlock.com/</loc>
     <lastmod>2018-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://adamwhiutlock.com/tags/</loc>
+    <loc>https://adamwhitlock.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://adamwhitlock.com/tags/helloworld/</loc>
+    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://adamwhitlock.com/tags/</loc>
     <lastmod>2018-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

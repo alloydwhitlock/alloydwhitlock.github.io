@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Adam Whitlock</title>
-    <link>https://adamwhiutlock.com/tags/</link>
+    <link>https://adamwhitlock.com/tags/</link>
     <description>Recent content in Tags on Adam Whitlock</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://adamwhiutlock.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://adamwhitlock.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://adamwhiutlock.com/tags/about/</link>
+      <link>https://adamwhitlock.com/tags/about/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://adamwhiutlock.com/tags/about/</guid>
+      <guid>https://adamwhitlock.com/tags/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Helloworld</title>
-      <link>https://adamwhiutlock.com/tags/helloworld/</link>
+      <link>https://adamwhitlock.com/tags/helloworld/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://adamwhiutlock.com/tags/helloworld/</guid>
+      <guid>https://adamwhitlock.com/tags/helloworld/</guid>
       <description></description>
     </item>
     
