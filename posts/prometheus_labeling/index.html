@@ -1,0 +1,198 @@
+<!doctype html>
+
+<html lang="en-US">
+
+<head>
+  <title>Adam Whitlock</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Adam Whitlock" />
+  <meta name="generator" content="Hugo 0.48" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://adamwhitlock.com/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://adamwhitlock.com/">Adam Whitlock</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/alloydwhitlock"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/alloydwhitlock"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/alloydwhitlock"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+        <li><a href="https://instagram.com/alloydwhitlock"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>Whiticism at its finest</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://adamwhitlock.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Prometheus Labels and Consul</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-08-31T16:41:46-05:00">Aug 31, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://adamwhitlock.com/tags/prometheus/">#prometheus</a>
+                
+                    , 
+                    <a href="https://adamwhitlock.com/tags/consul/">#consul</a>
+                
+            </em>
+        </li>
+        
+
+        <li>4 min read</li>
+    </ul>
+</aside>
+    
+
+    
+
+<p>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted. This creates a lot of cruft in the <code>targets</code> view, making it look like there is more wrong than right. It&rsquo;s easily fixed with the Prometheus <code>relabel_config</code> directives that are part of the Prometheus configuration. <code>relabel_config</code> allows you to change any labels discovered by Consul and specify target labels – like <code>__address__</code> – and add correct information. Relabeling rules used to drop or keep specific metrics allow you to hide what you don&rsquo;t want, keeping the interface and metrics system manageable.</p>
+
+<p>The regex supplied in <code>relabel_config</code> uses the Go implementation of regex and can only be used for a single relabel operation at a time. You cannot chain multiple relabel rules, such as renaming one label and then modifying that result. While chaining result modification seems like it would be ideal, really it would complicate matters. If <em><em>you</em></em> feel that making multiple chained relabeling is the only true way, then you are in for a big surprise: create a new <code>job_name</code> directive in your configuration. Through creating a new <code>job_name</code>, you will be able to specifically target all operations that have to occur in that single job. If you need to have all detected hosts have the same port, relabel <em>everything</em> in that job and drop what doesn&rsquo;t match. It will be much easier to do that than manage multiple chained rules in the future. I mean, this isn&rsquo;t Nagios&hellip; right?</p>
+
+<h3 id="creating-target-groups-by-job-name">Creating Target Groups by Job Name</h3>
+
+<p>Depending on how many services we have detected, we might want to create a per-service target group instead of lumping ALL services into individual jobs. This rule example highlights how we can take a label name and create a service-to-job result. There is an additional definition for dropping consul from the discovered service list, which isn&rsquo;t required but might be helpful.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  - job_name: microservices
+
+    <span style="color:#75715e"># You MUST specify the source of configurations on a per-job_name basis</span>
+    consul_sd_configs:
+      - server: <span style="color:#e6db74">&#39;localhost:8500&#39;</span>
+
+    relabel_configs:
+      <span style="color:#75715e"># Service names become the job name</span>
+      - source_labels: [__meta_consul_service]
+        target_label:  job
+
+      <span style="color:#75715e"># Hide Consul from the targets list</span>
+      - source_labels: [__meta_consul_service]
+        regex:  <span style="color:#e6db74">&#39;(^consul)&#39;</span>
+        target_label: job
+        action: drop</code></pre></div>
+<h3 id="prometheus-node-exporter-and-consul-port">Prometheus Node Exporter and Consul Port</h3>
+
+<p>Any of the hosts in Consul and detected by Prometheus should have node-exporter running. When detected, this job will create a new list of nodes and use the default node-exporter port of 9100.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  - job_name: node-exporter
+    <span style="color:#75715e"># If prometheus-node-exporter is installed, grab stats about the local</span>
+    <span style="color:#75715e"># machine by default, otherwise delete this directive</span>
+    static_configs:
+      - targets: [<span style="color:#e6db74">&#39;localhost:9100&#39;</span>]
+
+    <span style="color:#75715e"># You MUST specify the source of configurations on a per-job_name basis</span>
+    consul_sd_configs:
+      - server: <span style="color:#e6db74">&#39;consul.domain.com:8500&#39;</span>
+
+    <span style="color:#75715e"># All hosts detected will use port 9100 for node-exporter</span>
+    relabel_configs:
+      - source_labels: [<span style="color:#e6db74">&#39;__address__&#39;</span>]
+        separator:     <span style="color:#e6db74">&#39;:&#39;</span>
+        regex:         <span style="color:#e6db74">&#39;(.*):(.*)&#39;</span>
+        target_label:  <span style="color:#e6db74">&#39;__address__&#39;</span>
+        <span style="color:#75715e"># The first regex result is used for the replacement rule, which</span>
+        <span style="color:#75715e"># is the host address without port. 9100 is appended to the address</span>
+        replacement:   <span style="color:#e6db74">&#39;${1}:9100&#39;</span></code></pre></div>
+<h3 id="creating-targets-with-consul-tags">Creating Targets with Consul Tags</h3>
+
+<p>This is an example of targeting a specific consul tag – apache – and associating a specific port to check for metrics. This example also highlights renaming the target to something easier to view in the targets list, which we&rsquo;ll want &lsquo;apache-httpd2&rsquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  - job_name: apache_service
+
+    <span style="color:#75715e"># You MUST specify the source of configurations on a per-job_name basis</span>
+    consul_sd_configs:
+      - server: <span style="color:#e6db74">&#39;consul.domain.com:8500&#39;</span>
+
+    relabel_configs:
+      <span style="color:#75715e"># Target &#39;apache&#39; services</span>
+      - source_labels: [<span style="color:#e6db74">&#39;__meta_consul_tags&#39;</span>]
+        regex:  <span style="color:#e6db74">&#39;.*,apache,.*&#39;</span> 
+        target_label: job
+        <span style="color:#75715e"># This will drop all targets that do not match the regex rule,</span>
+        <span style="color:#75715e"># leaving only the &#39;apache&#39; targets</span>
+        action: <span style="color:#e6db74">&#39;keep&#39;</span>
+      <span style="color:#75715e"># Use port 9117, used by Prometheus Apache Exporter</span>
+      - source_labels: [<span style="color:#e6db74">&#39;__address__&#39;</span>]
+        separator:     <span style="color:#e6db74">&#39;:&#39;</span>
+        regex:         <span style="color:#e6db74">&#39;(.*):(.*)&#39;</span>
+        target_label:  <span style="color:#e6db74">&#39;__address__&#39;</span>
+        replacement:   <span style="color:#e6db74">&#39;${1}:9117&#39;</span>
+      <span style="color:#75715e"># Will be listed as &#39;apache-httpd2&#39; in the targets view</span>
+      - source_labels: [<span style="color:#e6db74">&#39;__meta_consul_tags&#39;</span>]
+        target_label: job
+        replacement: <span style="color:#e6db74">&#39;apache-httpd2&#39;</span> </code></pre></div>
+<p>Supporting documents:
+* <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#%3Crelabel_config%3E">Prometheus - Relabel Config</a></p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://adamwhitlock.com/posts/starting/"><i class="fa fa-chevron-circle-left"></i> Starting</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://adamwhitlock.comindex.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://adamwhitlock.com/js/scripts.js"></script>
+</body>
+
+</html>

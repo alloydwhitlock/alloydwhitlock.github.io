@@ -21,11 +21,29 @@
     </item>
     
     <item>
+      <title>Consul</title>
+      <link>https://adamwhitlock.com/tags/consul/</link>
+      <pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
+      
+      <guid>https://adamwhitlock.com/tags/consul/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Helloworld</title>
       <link>https://adamwhitlock.com/tags/helloworld/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://adamwhitlock.com/tags/helloworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prometheus</title>
+      <link>https://adamwhitlock.com/tags/prometheus/</link>
+      <pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
+      
+      <guid>https://adamwhitlock.com/tags/prometheus/</guid>
       <description></description>
     </item>
     

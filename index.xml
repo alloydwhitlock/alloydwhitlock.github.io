@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Prometheus Labels and Consul</title>
+      <link>https://adamwhitlock.com/posts/prometheus_labeling/</link>
+      <pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
+      
+      <guid>https://adamwhitlock.com/posts/prometheus_labeling/</guid>
+      <description>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted.</description>
+    </item>
+    
+    <item>
       <title>Starting</title>
       <link>https://adamwhitlock.com/posts/starting/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
