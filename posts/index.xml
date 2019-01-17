@@ -1,33 +1,122 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Adam Whitlock</title>
-    <link>https://adamwhitlock.com/posts/</link>
-    <description>Recent content on Adam Whitlock</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 31 Aug 2018 16:41:46 -0500</lastBuildDate>
-    
-	<atom:link href="https://adamwhitlock.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Prometheus Labels and Consul</title>
-      <link>https://adamwhitlock.com/posts/prometheus_labeling/</link>
-      <pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
-      
-      <guid>https://adamwhitlock.com/posts/prometheus_labeling/</guid>
-      <description>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted.</description>
-    </item>
-    
-    <item>
-      <title>Starting</title>
-      <link>https://adamwhitlock.com/posts/starting/</link>
-      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamwhitlock.com/posts/starting/</guid>
-      <description>Expectations should not be applied to this site. It’s simply a collection of my interests. In reality, the only expectation is that I write about whatever I feel like. It can be about my family, my job, my bike, or an idea.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Posts on Adam Whitlock</title>
+		<link>https://adamwhitlock.com/posts/</link>
+		<description>Recent content in Posts on Adam Whitlock</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-US</language>
+		<lastBuildDate>Fri, 31 Aug 2018 16:41:46 -0500</lastBuildDate>
+		<atom:link href="https://adamwhitlock.com/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Prometheus Labels and Consul</title>
+			<link>https://adamwhitlock.com/posts/prometheus_labeling/</link>
+			<pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
+			
+			<guid>https://adamwhitlock.com/posts/prometheus_labeling/</guid>
+			<description>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted. This creates a lot of cruft in the targets view, making it look like there is more wrong than right. It&amp;rsquo;s easily fixed with the Prometheus relabel_config directives that are part of the Prometheus configuration.</description>
+			<content type="html"><![CDATA[
+
+<p>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted. This creates a lot of cruft in the <code>targets</code> view, making it look like there is more wrong than right. It&rsquo;s easily fixed with the Prometheus <code>relabel_config</code> directives that are part of the Prometheus configuration. <code>relabel_config</code> allows you to change any labels discovered by Consul and specify target labels – like <code>__address__</code> – and add correct information. Relabeling rules used to drop or keep specific metrics allow you to hide what you don&rsquo;t want, keeping the interface and metrics system manageable.</p>
+
+<p>The regex supplied in <code>relabel_config</code> uses the Go implementation of regex and can only be used for a single relabel operation at a time. You cannot chain multiple relabel rules, such as renaming one label and then modifying that result. While chaining result modification seems like it would be ideal, really it would complicate matters. If <em><em>you</em></em> feel that making multiple chained relabeling is the only true way, then you are in for a big surprise: create a new <code>job_name</code> directive in your configuration. Through creating a new <code>job_name</code>, you will be able to specifically target all operations that have to occur in that single job. If you need to have all detected hosts have the same port, relabel <em>everything</em> in that job and drop what doesn&rsquo;t match. It will be much easier to do that than manage multiple chained rules in the future. I mean, this isn&rsquo;t Nagios&hellip; right?</p>
+
+<h3 id="creating-target-groups-by-job-name">Creating Target Groups by Job Name</h3>
+
+<p>Depending on how many services we have detected, we might want to create a per-service target group instead of lumping ALL services into individual jobs. This rule example highlights how we can take a label name and create a service-to-job result. There is an additional definition for dropping consul from the discovered service list, which isn&rsquo;t required but might be helpful.</p>
+
+<pre><code class="language-yaml">  - job_name: microservices
+
+    # You MUST specify the source of configurations on a per-job_name basis
+    consul_sd_configs:
+      - server: 'localhost:8500'
+
+    relabel_configs:
+      # Service names become the job name
+      - source_labels: [__meta_consul_service]
+        target_label:  job
+
+      # Hide Consul from the targets list
+      - source_labels: [__meta_consul_service]
+        regex:  '(^consul)'
+        target_label: job
+        action: drop
+
+
+</code></pre>
+
+<h3 id="prometheus-node-exporter-and-consul-port">Prometheus Node Exporter and Consul Port</h3>
+
+<p>Any of the hosts in Consul and detected by Prometheus should have node-exporter running. When detected, this job will create a new list of nodes and use the default node-exporter port of 9100.</p>
+
+<pre><code class="language-yaml">  - job_name: node-exporter
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default, otherwise delete this directive
+    static_configs:
+      - targets: ['localhost:9100']
+
+    # You MUST specify the source of configurations on a per-job_name basis
+    consul_sd_configs:
+      - server: 'consul.domain.com:8500'
+
+    # All hosts detected will use port 9100 for node-exporter
+    relabel_configs:
+      - source_labels: ['__address__']
+        separator:     ':'
+        regex:         '(.*):(.*)'
+        target_label:  '__address__'
+        # The first regex result is used for the replacement rule, which
+        # is the host address without port. 9100 is appended to the address
+        replacement:   '${1}:9100'
+
+</code></pre>
+
+<h3 id="creating-targets-with-consul-tags">Creating Targets with Consul Tags</h3>
+
+<p>This is an example of targeting a specific consul tag – apache – and associating a specific port to check for metrics. This example also highlights renaming the target to something easier to view in the targets list, which we&rsquo;ll want &lsquo;apache-httpd2&rsquo;.</p>
+
+<pre><code class="language-yaml">  - job_name: apache_service
+
+    # You MUST specify the source of configurations on a per-job_name basis
+    consul_sd_configs:
+      - server: 'consul.domain.com:8500'
+
+    relabel_configs:
+      # Target 'apache' services
+      - source_labels: ['__meta_consul_tags']
+        regex:  '.*,apache,.*' 
+        target_label: job
+        # This will drop all targets that do not match the regex rule,
+        # leaving only the 'apache' targets
+        action: 'keep'
+      # Use port 9117, used by Prometheus Apache Exporter
+      - source_labels: ['__address__']
+        separator:     ':'
+        regex:         '(.*):(.*)'
+        target_label:  '__address__'
+        replacement:   '${1}:9117'
+      # Will be listed as 'apache-httpd2' in the targets view
+      - source_labels: ['__meta_consul_tags']
+        target_label: job
+        replacement: 'apache-httpd2' 
+</code></pre>
+
+<p>Supporting documents:
+* <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#%3Crelabel_config%3E">Prometheus - Relabel Config</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Starting</title>
+			<link>https://adamwhitlock.com/posts/starting/</link>
+			<pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://adamwhitlock.com/posts/starting/</guid>
+			<description>Expectations should not be applied to this site. It’s simply a collection of my interests. In reality, the only expectation is that I write about whatever I feel like. It can be about my family, my job, my bike, or an idea. Hopefully the things I find interesting are the things you’ll find interesting.</description>
+			<content type="html"><![CDATA[<p>Expectations should not be applied to this site. It’s simply a collection of my interests. In reality, the only expectation is that I write about whatever I feel like. It can be about my family, my job, my bike, or an idea. Hopefully the things I find interesting are the things you’ll find interesting.</p>
+]]></content>
+		</item>
+		
+	</channel>
 </rss>

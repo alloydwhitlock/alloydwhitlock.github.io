@@ -17,7 +17,7 @@
       <pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
       
       <guid>https://adamwhitlock.com/posts/prometheus_labeling/</guid>
-      <description>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted.</description>
+      <description>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted. This creates a lot of cruft in the targets view, making it look like there is more wrong than right. It&amp;rsquo;s easily fixed with the Prometheus relabel_config directives that are part of the Prometheus configuration.</description>
     </item>
     
   </channel>
