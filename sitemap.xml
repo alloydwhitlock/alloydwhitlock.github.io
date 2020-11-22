@@ -1,67 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adamwhitlock.com/about/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
+    <loc>https://whitlock.dev/series/</loc>
   </url>
   
   <url>
-    <loc>https://adamwhitlock.com/posts/prometheus_labeling/</loc>
-    <lastmod>2018-08-31T16:41:46-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/posts/starting/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/tags/about/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/tags/consul/</loc>
-    <lastmod>2018-08-31T16:41:46-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/tags/helloworld/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/posts/</loc>
-    <lastmod>2018-08-31T16:41:46-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/tags/prometheus/</loc>
-    <lastmod>2018-08-31T16:41:46-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://adamwhitlock.com/tags/</loc>
-    <lastmod>2018-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://whitlock.dev/</loc>
   </url>
   
 </urlset>

@@ -1,43 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Adam Whitlock</title>
-    <link>https://adamwhitlock.com/</link>
-    <description>Recent content on Adam Whitlock</description>
+    <title>whitlock.dev</title>
+    <link>https://whitlock.dev/</link>
+    <description>Recent content on whitlock.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://adamwhitlock.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>About</title>
-      <link>https://adamwhitlock.com/about/</link>
-      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamwhitlock.com/about/</guid>
-      <description>Here are some facts about Adam Whitlock:
- Has a great wife &amp;amp; father to three wonderful kids Grew up in Lincoln, NE but really hasn&amp;rsquo;t been back in a decade Worked for a few places (Linkedin, CDW, LeMans Corporation) Deals with the &amp;ldquo;big data&amp;rdquo; and &amp;ldquo;site reliability engineering&amp;rdquo; Lived for a while in the San Francisco Bay Area Works at Glassdoor from his house in Wisconsin Passionate about building good operations practices Probably drinks too much coffee Helps co-organize the MSN DevOps Meetup If you tell him you bike, he&amp;rsquo;ll assume you mean a bicycle Loves to teach and share what he knows Needs to surround himself with interesting people  </description>
-    </item>
-    
-    <item>
-      <title>Prometheus Labels and Consul</title>
-      <link>https://adamwhitlock.com/posts/prometheus_labeling/</link>
-      <pubDate>Fri, 31 Aug 2018 16:41:46 -0500</pubDate>
-      
-      <guid>https://adamwhitlock.com/posts/prometheus_labeling/</guid>
-      <description>Having the ability to combine Prometheus and Consul to allow discovery of monitoring endpoints is wonderful, but it can come with some pain points. Depending on how Consul is setup and the information passed from your applications, Prometheus may display endpoints that will never have any metrics emitted. This creates a lot of cruft in the targets view, making it look like there is more wrong than right. It&amp;rsquo;s easily fixed with the Prometheus relabel_config directives that are part of the Prometheus configuration.</description>
-    </item>
-    
-    <item>
-      <title>Starting</title>
-      <link>https://adamwhitlock.com/posts/starting/</link>
-      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://adamwhitlock.com/posts/starting/</guid>
-      <description>Expectations should not be applied to this site. It’s simply a collection of my interests. In reality, the only expectation is that I write about whatever I feel like. It can be about my family, my job, my bike, or an idea. Hopefully the things I find interesting are the things you’ll find interesting.</description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://whitlock.dev/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
