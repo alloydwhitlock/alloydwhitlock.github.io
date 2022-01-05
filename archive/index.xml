@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Dec 2021 22:31:55 -0600</lastBuildDate><atom:link href="https://adamwhitlock.com/archive/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test Post</title>
-      <link>https://adamwhitlock.com/archive/one/</link>
-      <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
+      <title>Music Streaming with Volumio and Raspberry Pi</title>
+      <link>https://adamwhitlock.com/archive/volumio/</link>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://adamwhitlock.com/archive/one/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ullamcorper, purus nec ullamcorper tristique, sem nisi volutpat sem, eget venenatis ante nibh id velit. Nunc gravida vulputate scelerisque. Ut ut turpis pulvinar, sagittis sapien eget, malesuada massa. Maecenas elementum pulvinar dolor, nec accumsan sapien placerat nec. Morbi vitae molestie diam. Vestibulum dignissim congue orci, ac gravida enim facilisis a. Sed venenatis metus eget commodo dignissim. Vestibulum porttitor, sem quis rutrum efficitur, risus neque pharetra eros, nec tristique tortor enim at est.</description>
+      <guid>https://adamwhitlock.com/archive/volumio/</guid>
+      <description>What I Wanted Didn’t Exist (in My Price Range) I wanted a device that could stream audio from a media server like Plex, not be reliant on Bluetooth for connectivity, allow me to use my existing speakers, and provide high quality audio output. I also wanted a solution that didn’t have me vendor-locked, like using Chromecast Audio or Amazon Echo. This left little options, other than buying a very nice Volumio DAC or similar device.</description>
     </item>
     
   </channel>

@@ -30,15 +30,6 @@ Equipment for pour-over
     </item>
     
     <item>
-      <title>Test Post</title>
-      <link>https://adamwhitlock.com/archive/one/</link>
-      <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
-      
-      <guid>https://adamwhitlock.com/archive/one/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ullamcorper, purus nec ullamcorper tristique, sem nisi volutpat sem, eget venenatis ante nibh id velit. Nunc gravida vulputate scelerisque. Ut ut turpis pulvinar, sagittis sapien eget, malesuada massa. Maecenas elementum pulvinar dolor, nec accumsan sapien placerat nec. Morbi vitae molestie diam. Vestibulum dignissim congue orci, ac gravida enim facilisis a. Sed venenatis metus eget commodo dignissim. Vestibulum porttitor, sem quis rutrum efficitur, risus neque pharetra eros, nec tristique tortor enim at est.</description>
-    </item>
-    
-    <item>
       <title>What&#39;s This About</title>
       <link>https://adamwhitlock.com/about/</link>
       <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
@@ -48,6 +39,15 @@ Equipment for pour-over
 Professional I&amp;rsquo;m an engineering manager, former sysadmin, and other things.
 Personal I&amp;rsquo;ve got a personal life. Fill this out.
 Site Design &amp;amp; Details The site is hosted on Github, using Github Pages. Website code is statically generated, meaning that all content on this site was pre-generated and not rendered. There&amp;rsquo;s no Javascript in use at the moment, but if some gets added I&amp;rsquo;ll hopefully remember to update this section with that info.</description>
+    </item>
+    
+    <item>
+      <title>Music Streaming with Volumio and Raspberry Pi</title>
+      <link>https://adamwhitlock.com/archive/volumio/</link>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://adamwhitlock.com/archive/volumio/</guid>
+      <description>What I Wanted Didn’t Exist (in My Price Range) I wanted a device that could stream audio from a media server like Plex, not be reliant on Bluetooth for connectivity, allow me to use my existing speakers, and provide high quality audio output. I also wanted a solution that didn’t have me vendor-locked, like using Chromecast Audio or Amazon Echo. This left little options, other than buying a very nice Volumio DAC or similar device.</description>
     </item>
     
   </channel>
