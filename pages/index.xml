@@ -38,7 +38,7 @@ Equipment for pour-over
       <description>My name is Adam Whitlock (pronouns he/him) and do things.
 Professional I&amp;rsquo;m an engineering manager, former sysadmin, and other things.
 Personal I&amp;rsquo;ve got a personal life. Fill this out.
-Site Design &amp;amp; Details The site is hosted on Github, using Github Pages. Website code is statically generated, meaning that all content on this site was pre-generated and not rendered. There&amp;rsquo;s no Javascript in use at the moment, but if some gets added I&amp;rsquo;ll hopefully remember to update this section with that info.</description>
+Site Design &amp;amp; Details The site is hosted on Github, using Github Pages. Website code is statically generated, meaning that all content on this site was pre-generated and not rendered. There&amp;rsquo;s no Javascript in use at the moment, but if some gets added I&amp;rsquo;ll hopefully remember to update this section with that info. I use Hugo, which is a static site generation framework written in Go.</description>
     </item>
     
   </channel>
