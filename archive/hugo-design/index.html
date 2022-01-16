@@ -9,6 +9,13 @@
     
     <link rel="stylesheet" href="https://adamwhitlock.com/style.min.d3da666ed9ed68d7ddcd192b882d21db9631617388ce5c8d8d37f54862ccd8ff.css" integrity="sha256-09pmbtntaNfdzRkriC0h25YxYXOIzlyNjTf1SGLM2P8=">
 
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.f38cea96d1f8255d7e589c6803d9b54fcb5b58692d9c456c7fdc4939108122a2.css" integrity="sha256-84zqltH4JV1&#43;WJxoA9m1T8tbWGktnEVsf9xJORCBIqI=">
+
+
+
     
     
     <link rel="stylesheet" href="https://adamwhitlock.com/assets/css/extra.css" media="screen">
@@ -65,12 +72,9 @@
       <div class="column">
         <div class="content">
           <h1 class="title is-3">Hugo, Through Design</h1>
-          <h2 class="subtitle is-5"><time>Jan 9, 2022</time></h2>
-          , last updated on January 15, 2022
+          <h2 class="subtitle is-5"><time>January 9, 2022 / Updated January 15, 2022</time></h2>
           <p class="subtitle is-4">Using theme design to learn Hugo better</p>
-          <p class="date">Published on January 9, 2022
-          </p>
-          <p>I would play with site design every day, from when I got home from work until passing out after 2am. My workspace was a corner desk with a large 22&quot; flat screen CRT and a Mac mini, with barely enough memory to drive the display. My chair constantly hit the railing of my bed, which barely fit in the room. The screen made it feel like the room was bigger. What I worked on made it feel like anything was good enough.</p>
+          <p>I would play with site design every day, from when I got home from work until passing out after 2AM. My workspace was a corner desk with a large 22&quot; flat screen CRT and a Mac mini, with barely enough memory to drive the display. My chair constantly hit the railing of my bed, which barely fit in the room. The screen made it feel like the room was bigger. What I worked on made it feel like anything was good enough.</p>
 <p>People used what I made and that was rewarding. MacMod, a website dedicated to modifying Apple hardware, was where I spent most of my efforts. I&rsquo;d occasionally spend time on my own site, but much less often. The MacMod user base was niche, meaning the users we had were few but loyal. I was &ldquo;staff&rdquo;, meaning I could contribute and make changes that I saw fit. It meant freedom in making MacMod work, and look, better.</p>
 <p>Over time I lost motivation in working on websites. It wasn&rsquo;t MacMod or a lack of time that caused it. Internet Explorer&rsquo;s awful lack of CSS and element compatibility is to blame. I spent more time trying to figure out how to support all of the CSS components and browser elements that Internet Explorer decided to not handle well, even across versions. It was maddening. I could make one small pixel change and everything would fall apart in Internet Explorer. Hours could be wasted trying to figure it out, just to realize your fix now makes it not work in FireFox. Conditions could be thrown at the browsers, but there was a point it became not fun to even think about.</p>
 <p>I have done light website work for jobs, and only once where &ldquo;design&rdquo; could be considered. I made a small dashboard site to render Hadoop cluster data when I was at LinkedIn. It was the first project I was tasked to do when I joined the Hadoop SRE team (formerly GridOps). Using jQuery and Bootstrap, I made it so users could add new clusters and configure the dashboard to show capacity information. That dashboard hasn&rsquo;t been used in years, but I think back to how nice it was to have a dashboard be a single-purpose tool.</p>
@@ -107,6 +111,7 @@
     {{ $css_output := $sass | resources.ToCSS | minify | resources.Fingerprint }}
     &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $css_output.Permalink }}&#34;</span> <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $css_output.Data.Integrity }}&#34;</span>&gt;
 </code></pre></div><h2 id="laying-it-out">Laying it Out</h2>
+<h3 id="theres-a-theme">There&rsquo;s a Theme</h3>
 <h3 id="skeleton--layout">Skeleton &amp; Layout</h3>
 <p>Using Hugo&rsquo;s <a href="https://gohugo.io/commands/hugo_new_theme/">built-in theme skeleton</a>, I ran <code>hugo new theme huey</code> and created a new theme named &ldquo;Huey&rdquo;. The basic structure was good enough to start with, yet when you look at Hugo&rsquo;s documentation the directory structure is missing one critical component: assets. Assets store what is used by Hugo pipes to build sites, so if you are using something like Sass (which I am) you will need to store your CSS source files in <code>assets</code>. The <code>static</code> directory, which the <code>hugo</code> command creates, is only meant for files ready to be used. Knowing this difference will mean understanding how to use</p>
 <h3 id="reduce-reuse-and-shortcode-with-hugo">Reduce, Reuse, and Shortcode with Hugo</h3>
@@ -138,7 +143,7 @@
 
                 </div>
             </div><footer class="footer">
-  <div class="content has-text-centered">
+  <div class="has-text-centered">
     <layer>
       
         
@@ -164,7 +169,6 @@
       </p>
     </layer>
   </div>
-</footer></div>
-<script async src="//static.getclicky.com/101349619.js"></script>
+</footer></div><script async src="//static.getclicky.com/101349619.js"></script>
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101349619ns.gif" /></p></noscript></body>
 </html>
