@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Dec 2021 22:31:55 -0600</lastBuildDate><atom:link href="https://adamwhitlock.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Helping Humans Troubleshoot</title>
+      <link>https://adamwhitlock.com/archive/humans-troubleshooting/</link>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://adamwhitlock.com/archive/humans-troubleshooting/</guid>
+      <description>“Cognitive load” is a term that refers to the amount of working memory resources someone can process at a given time. Working memory is a limited resource in capacity, related to how we learn and process information. If we have a lot of distractions (noise) or are constantly shifting tasks, it can impact our ability to learn. Why does this matter? During troubleshooting, people are actively trying to learn about what is happening in a system. They need to gather facts and understand what happened. Decisions need to be made. Depending on incident severity, the pressure to get things working can also be strong.</description>
+    </item>
+    
+    <item>
       <title>Hugo, through Design</title>
       <link>https://adamwhitlock.com/archive/hugo-design/</link>
       <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>

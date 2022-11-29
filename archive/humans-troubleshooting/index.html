@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Helping Humans Troubleshoot : Adam Whitlock</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Reflections from a Whitlock" />
+    <meta name="dc.relation" content="https://adamwhitlock.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.d3da666ed9ed68d7ddcd192b882d21db9631617388ce5c8d8d37f54862ccd8ff.css" integrity="sha256-09pmbtntaNfdzRkriC0h25YxYXOIzlyNjTf1SGLM2P8=">
+
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.6f3a14bd01b83304e77630d040baec2b975905c1384ba4c806e573d55a4c0185.css" integrity="sha256-bzoUvQG4MwTndjDQQLrsK5dZBcE4S6TIBuVz1VpMAYU=">
+
+
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/assets/css/extra.css" media="screen">
+    
+    
+    <script src="https://kit.fontawesome.com/818ce51a67.js" crossorigin="anonymous"></script>
+    
+
+    <script src="https://adamwhitlock.com/js/bulma.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://adamwhitlock.com/img/">
+</head><body>
+        <div id="container">
+<div class="container">
+<nav class="navbar is-transparent mb-4" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item title has-text-black" href="https://adamwhitlock.com">Adam Whitlock</a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbar-menu" class="navbar-menu">
+    <div class="navbar-end">
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/"  >Home</a>
+        
+        <a class="navbar-item is-active" href="https://adamwhitlock.com/archive/"  >Archive</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/coffee/"  >Coffee</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/about/"  >About</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/contact/"  >Contact</a>
+        
+    </div>
+  </div>
+</nav>
+</div><div class="container">
+                <div id="content">
+<main aria-role="main">
+  <div class="section">
+    <div class="columns">
+      <div class="column">
+        <figure class="image ">
+          
+        </figure>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <h1 class="title is-3">Helping Humans Troubleshoot</h1>
+          <h2 class="subtitle is-5"><time>November 29, 2022</time></h2>
+          <p class="subtitle is-4">Language is key during incidents</p>
+          <p>“Cognitive load” is a term that refers to the amount of working memory resources someone can process at a given time. Working memory is a limited resource in capacity, related to how we learn and process information. If we have a lot of distractions (noise) or are constantly shifting tasks, it can impact our ability to learn. Why does this matter?  During troubleshooting, people are actively trying to learn about what is happening in a system. They need to gather facts and understand what happened. Decisions need to be made. Depending on incident severity, the pressure to get things working can also be strong. Even more factors can be added, like if it’s their first on-call shift or if they think they are responsible for breaking the system. Whatever the factors, there’s a lot in an incident and that they compound against the troubleshooter’s ability to learn what’s happening. This is also why we need to ensure we’re not adding noise to an already noisy working memory of everyone involved. Ensure that the people in the room (real or virtual) don’t have diminished cognitive load and can stay focused on the problem.</p>
+<p>While it’s great that we know what cognitive load is and that we have limited memory resources, what do we do with this information? We need to think about how we can provide clear information during troubleshooting and remove the burden on others to action on your words if it’s not necessary. Think about how you ask questions, how you provide information, and how you contribute to the troubleshooting. Additionally, think about how you can reduce unnecessary emotions coming up because you wanted to share your opinion. Not only will that add noise, it may hurt feelings and that’s easy to avoid.</p>
+<p>Here are some tips you can use to reduce the cognitive ‘noise” in an incident:</p>
+<ul>
+<li>Think about how you phrase your questions to gain information for yourself and the group.</li>
+<li>Don’t introduce opinions or “hot takes”.</li>
+<li>Make statements about what happened or what needs to happen next.</li>
+<li>State who is working on problems, such as incident roles or volunteers for tasks</li>
+<li>If you have a question and can get the answer on your own, do the research. Let the incident response team know about your question, along with your research.</li>
+<li>Ask open questions when it’s apparent a line of research appears ignored or exhausted.</li>
+<li>If you don’t have the right information, either through access or experience, find someone who can answer the questions.</li>
+<li>Write information down in shared notes!</li>
+<li>Volunteer for work if you have a particular expertise</li>
+</ul>
+<p>Examples of Noise Reduction:</p>
+<ul>
+<li>“We think a bunch of new users are causing…” becomes “there was an observed increase in new user signup correlating to…”.</li>
+<li>“Would adding more instances fix this problem…” becomes “due to an increase in requests, adding 10 more instances addresses one known problem…”.</li>
+<li>“If we had just done what I said we should have done six months ago… “ becomes “I researched this issue six months ago and have a more permanent fix we can investigate after we address the current problem…”.</li>
+<li>“Would updating the volume type address the provisioned IOPS issue we are experiencing…” to “I researched available volume types and according to the documentation a change in volume type would not address our current problem…”.</li>
+<li>“I think this works this way based on what I’ve done before…” becomes “I have experience with this problem, and I can help…”.</li>
+<li>“Can we throw money at this…” becomes, “do we have permission to add larger instances to alleviate this problem…”.</li>
+<li>“What would happen if we rolled back the last deployment…” becomes “what is the risk of rolling back the last deployment”.</li>
+<li>“Increasing the memory should fix the full heap size…” becomes “the heap is full and memory needs to be added…”.</li>
+</ul>
+<p>Start by thinking about how you ask questions. Do they introduce guesswork? Do they include a lot of modal verbs, like “should” and “could”? Try removing some of those words from your normal line of questioning and introduce more declarative statements. Do a minute of cursory searching for your answer before asking it. Pull back from emotional takes and try to be supportive. Whatever you choose to begin with, it’ll be a great first step in reducing troubleshooting noise. I’m sure the humans in the room will appreciate it.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+                </div>
+            </div><footer class="footer">
+  <div class="has-text-centered">
+    <layer>
+      
+        
+          
+          <a class="footer-social" href="https://linkedin.com/in/alloydwhitlock"><i class='fab fa-linkedin fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://github.com/alloydwhitlock"><i class='fab fa-github fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://twitter.com/alloydwhitlock"><i class='fab fa-twitter fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://www.discogs.com/user/alloydwhitlock"><i class='fas fa-record-vinyl'></i></a>
+          
+        
+      
+    </layer>
+    <layer>
+      <p>
+        
+        Website theme is <a class="has-text-weight-semibold" href="http://github.com/alloydwhitlock/huey">Huey</a> by <a class="has-text-weight-semibold" href="https://adamwhitlock.com">Adam Whitlock</a>.
+      </p>
+      <p>
+         &copy; 2022 Adam Whitlock
+      </p>
+    </layer>
+  </div>
+</footer></div><script async src="//static.getclicky.com/101349619.js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101349619ns.gif" /></p></noscript></body>
+</html>
