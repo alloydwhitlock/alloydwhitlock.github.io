@@ -6,46 +6,35 @@
     <description>Recent content in Pages on Adam Whitlock</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Jan 2023 12:00:00 -0600</lastBuildDate><atom:link href="https://adamwhitlock.com/pages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 12:00:00 -0600</lastBuildDate>
+    <atom:link href="https://adamwhitlock.com/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bikes</title>
       <link>https://adamwhitlock.com/bikes/</link>
       <pubDate>Sun, 01 Jan 2023 12:00:00 -0600</pubDate>
-      
       <guid>https://adamwhitlock.com/bikes/</guid>
-      <description>All City Mr. Pink  A steel-frame bicycle is what I think about when I think about bicycles. I wanted something that looked “classic” yet was very modern in components and feel. All City makes great frames, with the Mr. Pink being a now-discontinued racing frame. It’s my understanding they make a similar frame, but with different steel. This Mr. Pink has Columbus Zona tubes, with interior routing for cabling. This makes it easier to maintain and keep cabling mishaps from happening. I’ve definitely caught my finger under a shifting cable more than once lifting up a bike, so it’s nice not dealing with slapping it on the frame like a guitar.</description>
+      <description>All City Mr. Pink A steel-frame bicycle is what I think about when I think about bicycles. I wanted something that looked “classic” yet was very modern in components and feel. All City makes great frames, with the Mr. Pink being a now-discontinued racing frame. It’s my understanding they make a similar frame, but with different steel. This Mr. Pink has Columbus Zona tubes, with interior routing for cabling. This makes it easier to maintain and keep cabling mishaps from happening. I’ve definitely caught my finger under a shifting cable more than once lifting up a bike, so it’s nice not dealing with slapping it on the frame like a guitar.</description>
     </item>
-    
     <item>
       <title>Coffee</title>
       <link>https://adamwhitlock.com/coffee/</link>
       <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
-      
       <guid>https://adamwhitlock.com/coffee/</guid>
-      <description>Coffee Snob No, not really. I&amp;rsquo;ve lived off of vending machine coffee. There are break rooms and rest stops where I know what number pad combination makes me a coffee I&amp;rsquo;ll drink for the next hour. Gas stations can make a decent brew, necessary when driving across the country.
-I might come across as a coffee snob because I care a lot about roasts and equipment. OK, I can accept that. However, just because I spend money on coffee doesn&amp;rsquo;t immediately make me a snob. I choose to spend more money than most people, which is fine.</description>
+      <description>Coffee Snob No, not really. I&amp;rsquo;ve lived off of vending machine coffee. There are break rooms and rest stops where I know what number pad combination makes me a coffee I&amp;rsquo;ll drink for the next hour. Gas stations can make a decent brew, necessary when driving across the country.&#xA;I might come across as a coffee snob because I care a lot about roasts and equipment. OK, I can accept that. However, just because I spend money on coffee doesn&amp;rsquo;t immediately make me a snob. I choose to spend more money than most people, which is fine.</description>
     </item>
-    
     <item>
       <title>Contact Information</title>
       <link>https://adamwhitlock.com/contact/</link>
       <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
-      
       <guid>https://adamwhitlock.com/contact/</guid>
-      <description>If you want to personally reach out to me, please send an email to &amp;ldquo;adam [at] adamwhitlock [dot] com&amp;rdquo;. I don&amp;rsquo;t check my email daily, unless I&amp;rsquo;m expecting something, so please wait a day or two before sending a followup message. Additionally, check out my social media profiles below.
- LinkedIn Github  If this is concerning something professional, like a business opportunity, please reach out using LinkedIn.</description>
+      <description>If you want to personally reach out to me, please send an email to &amp;ldquo;adam [at] adamwhitlock [dot] com&amp;rdquo;. I don&amp;rsquo;t check my email daily, unless I&amp;rsquo;m expecting something, so please wait a day or two before sending a followup message. Additionally, check out my social media profiles below.&#xA;LinkedIn Github If this is concerning something professional, like a business opportunity, please reach out using LinkedIn.</description>
     </item>
-    
     <item>
       <title>What&#39;s This About</title>
       <link>https://adamwhitlock.com/about/</link>
       <pubDate>Wed, 22 Dec 2021 22:31:55 -0600</pubDate>
-      
       <guid>https://adamwhitlock.com/about/</guid>
-      <description>My name is Adam Whitlock (pronouns he/him) and I like to think of myself as being many things.
-Professional Work Engineering Management I keep an updated manager README.md on Github if you want to learn how I approach management and my guiding principles.
-Site Design &amp;amp; Details The site is hosted on Github, using Github Pages. Website code is statically generated, meaning that all content on this site was pre-generated and not rendered. There&amp;rsquo;s no Javascript in use at the moment, but if some gets added I&amp;rsquo;ll hopefully remember to update this section with that info.</description>
+      <description>My name is Adam Whitlock (pronouns he/him) and I like to think of myself as being many things.&#xA;Professional Work Engineering Management I keep an updated manager README.md on Github if you want to learn how I approach management and my guiding principles.&#xA;Site Design &amp;amp; Details The site is hosted on Github, using Github Pages. Website code is statically generated, meaning that all content on this site was pre-generated and not rendered. There&amp;rsquo;s no Javascript in use at the moment, but if some gets added I&amp;rsquo;ll hopefully remember to update this section with that info.</description>
     </item>
-    
   </channel>
 </rss>
