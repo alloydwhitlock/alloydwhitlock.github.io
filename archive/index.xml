@@ -9,6 +9,13 @@
     <lastBuildDate>Wed, 22 Dec 2021 22:31:55 -0600</lastBuildDate>
     <atom:link href="https://adamwhitlock.com/archive/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Structure Files: Helping AI Navigate Your Codebase Without Getting Lost</title>
+      <link>https://adamwhitlock.com/archive/structure-files/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamwhitlock.com/archive/structure-files/</guid>
+      <description>We&amp;rsquo;ve been promised a future where AI writes our code, fixes our bugs, and maybe even makes our coffee. But right now? Most of us are still spending way too much time explaining our codebases to AI assistants that seem to have the attention span of a caffeinated squirrel.&#xA;Let me paint a familiar scene: You ask your AI to add a new API endpoint. It responds by cheerfully rewriting your authentication system, completely missing your existing patterns, and somehow managing to reference a CSS file that hasn&amp;rsquo;t existed since 2019.</description>
+    </item>
+    <item>
       <title>Microphone Settings for Zoom</title>
       <link>https://adamwhitlock.com/archive/zoom-microphone/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
