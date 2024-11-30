@@ -4,44 +4,44 @@
     <title>Archive on Adam Whitlock</title>
     <link>https://adamwhitlock.com/archive/</link>
     <description>Recent content in Archive on Adam Whitlock</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Dec 2021 22:31:55 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adamwhitlock.com/archive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Structure Files: Helping AI Navigate Your Codebase Without Getting Lost</title>
       <link>https://adamwhitlock.com/archive/structure-files/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://adamwhitlock.com/archive/structure-files/</guid>
-      <description>We&amp;rsquo;ve been promised a future where AI writes our code, fixes our bugs, and maybe even makes our coffee. But right now? Most of us are still spending way too much time explaining our codebases to AI assistants that seem to have the attention span of a caffeinated squirrel.&#xA;Let me paint a familiar scene: You ask your AI to add a new API endpoint. It responds by cheerfully rewriting your authentication system, completely missing your existing patterns, and somehow managing to reference a CSS file that hasn&amp;rsquo;t existed since 2019.</description>
+      <description>&lt;p&gt;We&amp;rsquo;ve been promised a future where AI writes our code, fixes our bugs, and maybe even makes our coffee. But right now? Most of us are still spending way too much time explaining our codebases to AI assistants that seem to have the attention span of a caffeinated squirrel.&lt;/p&gt;&#xA;&lt;p&gt;Let me paint a familiar scene: You ask your AI to add a new API endpoint. It responds by cheerfully rewriting your authentication system, completely missing your existing patterns, and somehow managing to reference a CSS file that hasn&amp;rsquo;t existed since 2019.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Microphone Settings for Zoom</title>
       <link>https://adamwhitlock.com/archive/zoom-microphone/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
       <guid>https://adamwhitlock.com/archive/zoom-microphone/</guid>
-      <description>How I sound shouldn’t be a distraction if I’m talking with my colleagues on Zoom. I use a variety of microphones during the day. Built-in MacBook Pro, AirPods, and my trusty Shure SM7B dynamic microphone. Each microphone has its own sound and purpose. Sometimes it’s for high quality recordings or interviews, while other times for ease. Microphones are not the only variable, since location changes too. My team can tell you I call from coffee shops a number of times, which can be noisy depending on who ordered an espresso. My home office/bedroom doesn’t have much on the walls or floor, making it perfect for echoes.</description>
+      <description>&lt;p&gt;How I sound shouldn’t be a distraction if I’m talking with my colleagues on Zoom. I use a variety of microphones during the day. Built-in MacBook Pro, AirPods, and my trusty Shure SM7B dynamic microphone. Each microphone has its own sound and purpose. Sometimes it’s for high quality recordings or interviews, while other times for ease. Microphones are not the only variable, since location changes too. My team can tell you I call from coffee shops a number of times, which can be noisy depending on who ordered an espresso. My home office/bedroom doesn’t have much on the walls or floor, making it perfect for echoes. So while one microphone maybe good for one space, another one might be dreadful.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helping Humans Troubleshoot</title>
       <link>https://adamwhitlock.com/archive/humans-troubleshooting/</link>
       <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://adamwhitlock.com/archive/humans-troubleshooting/</guid>
-      <description>“Cognitive load” is a term that refers to the amount of working memory resources someone can process at a given time. Working memory is a limited resource in capacity, related to how we learn and process information. If we have a lot of distractions (noise) or are constantly shifting tasks, it can impact our ability to learn. Why does this matter? During troubleshooting, people are actively trying to learn about what is happening in a system. They need to gather facts and understand what happened. Decisions need to be made. Depending on incident severity, the pressure to get things working can also be strong.</description>
+      <description>&lt;p&gt;“Cognitive load” is a term that refers to the amount of working memory resources someone can process at a given time. Working memory is a limited resource in capacity, related to how we learn and process information. If we have a lot of distractions (noise) or are constantly shifting tasks, it can impact our ability to learn. Why does this matter?  During troubleshooting, people are actively trying to learn about what is happening in a system. They need to gather facts and understand what happened. Decisions need to be made. Depending on incident severity, the pressure to get things working can also be strong. Even more factors can be added, like if it’s their first on-call shift or if they think they are responsible for breaking the system. Whatever the factors, there’s a lot in an incident and that they compound against the troubleshooter’s ability to learn what’s happening. This is also why we need to ensure we’re not adding noise to an already noisy working memory of everyone involved. Ensure that the people in the room (real or virtual) don’t have diminished cognitive load and can stay focused on the problem.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo, through Design</title>
       <link>https://adamwhitlock.com/archive/hugo-design/</link>
       <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
       <guid>https://adamwhitlock.com/archive/hugo-design/</guid>
-      <description>I would play with site design every day, from when I got home from work until passing out after 2AM. My workspace was a corner desk with a large 22&amp;quot; flat screen CRT and a Mac mini, with barely enough memory to drive the display. My chair constantly hit the railing of my bed, which barely fit in the room. The screen made it feel like the room was bigger. What I worked on made it feel like anything was good enough.&#xA;People used what I made and that was rewarding.</description>
+      <description>&lt;p&gt;I would play with site design every day, from when I got home from work until passing out after 2AM. My workspace was a corner desk with a large 22&amp;quot; flat screen CRT and a Mac mini, with barely enough memory to drive the display. My chair constantly hit the railing of my bed, which barely fit in the room. The screen made it feel like the room was bigger. What I worked on made it feel like anything was good enough.&lt;/p&gt;&#xA;&lt;p&gt;People used what I made and that was rewarding. MacMod, a website dedicated to modifying Apple hardware, was where I spent most of my efforts. I&amp;rsquo;d occasionally spend time on my own site, but much less often. The MacMod user base was niche, meaning the users we had were few but loyal. I was &amp;ldquo;staff&amp;rdquo;, meaning I could contribute and make changes that I saw fit. It meant freedom in making MacMod work, and look, better.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Music Streaming with Volumio and Raspberry Pi</title>
       <link>https://adamwhitlock.com/archive/volumio/</link>
       <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://adamwhitlock.com/archive/volumio/</guid>
-      <description>I wanted a device that could stream audio from a media server like Plex, not be reliant on Bluetooth for connectivity, allow me to use my existing speakers, and provide high quality audio output. I also wanted a solution that didn’t have me vendor-locked, like using Chromecast Audio or Amazon Echo. This left little options, other than buying a very nice wireless DAC or similar device.&#xA;About nine months ago it occurred to me that I could build what I wanted, far cheaper than most solutions. It would also prove to be a fun project and stretch some of my knowledge of audiophile equipment.</description>
+      <description>&lt;p&gt;I wanted a device that could stream audio from a media server like Plex, not be reliant on Bluetooth for connectivity, allow me to use my existing speakers, and provide high quality audio output. I also wanted a solution that didn’t have me vendor-locked, like using Chromecast Audio or Amazon Echo. This left little options, other than buying a very nice wireless DAC or similar device.&lt;/p&gt;&#xA;&lt;p&gt;About nine months ago it occurred to me that I could build what I wanted, far cheaper than most solutions. It would also prove to be a fun project and stretch some of my knowledge of audiophile equipment.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
