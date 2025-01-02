@@ -6,8 +6,15 @@
     <description>Recent content in Home on Adam Whitlock</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adamwhitlock.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microphone Settings for Zoom</title>
+      <link>https://adamwhitlock.com/archive/synthetic-smb-mounts/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://adamwhitlock.com/archive/synthetic-smb-mounts/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;macOS Automounts with synthetic.conf&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;One of the more interesting administration changes for macOS is the synthetic.conf &lt;strong&gt;file&lt;/strong&gt;—a tool that gives you control over creating “virtual” directory mounts in the root filesystem. Whether you’re mapping an SMB share, adding an NFS mount, or creating a placeholder directory, this utility offers power, flexibility, and some unexpected quirks.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What Exactly is synthetic.conf Used For?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The synthetic.conf file allows macOS users to define non-existent directories or symbolic links in the root filesystem. The system processes this file during boot, making it ideal for creating mounts for network shares like SMB or NFS. It’s a lightweight way to automate mounting without relying on external scripts or tools.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Structure Files: Helping AI Navigate Your Codebase Without Getting Lost</title>
       <link>https://adamwhitlock.com/archive/structure-files/</link>

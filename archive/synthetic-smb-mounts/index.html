@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Microphone Settings for Zoom : Adam Whitlock</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Reflections from a Whitlock" />
+    <meta name="dc.relation" content="https://adamwhitlock.com/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.d3da666ed9ed68d7ddcd192b882d21db9631617388ce5c8d8d37f54862ccd8ff.css" integrity="sha256-09pmbtntaNfdzRkriC0h25YxYXOIzlyNjTf1SGLM2P8=">
+
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.6f3a14bd01b83304e77630d040baec2b975905c1384ba4c806e573d55a4c0185.css" integrity="sha256-bzoUvQG4MwTndjDQQLrsK5dZBcE4S6TIBuVz1VpMAYU=">
+
+
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/assets/css/extra.css" media="screen">
+    
+    
+    <script src="https://kit.fontawesome.com/818ce51a67.js" crossorigin="anonymous"></script>
+    
+
+    <script src="https://adamwhitlock.com/js/bulma.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://adamwhitlock.com/img/">
+</head><body>
+        <div id="container">
+<div class="container">
+<nav class="navbar is-transparent mb-4" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item title has-text-black" href="https://adamwhitlock.com/">Adam Whitlock</a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbar-menu" class="navbar-menu">
+    <div class="navbar-end">
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/"  >Home</a>
+        
+        <a class="navbar-item is-active" href="https://adamwhitlock.com/archive/"  >Archive</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/coffee/"  >Coffee</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/bikes/"  >Bikes</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/about/"  >About</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/contact/"  >Contact</a>
+        
+    </div>
+  </div>
+</nav>
+</div><div class="container">
+                <div id="content">
+<main aria-role="main">
+  <div class="section">
+    <div class="columns">
+      <div class="column">
+        <figure class="image ">
+          
+        </figure>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <h1 class="title is-3">Microphone Settings for Zoom</h1>
+          <h2 class="subtitle is-5"><time>January 2, 2025</time></h2>
+          <p class="subtitle is-4">macOS Zoom Settings for Microphone</p>
+          <p><strong>macOS Automounts with synthetic.conf</strong></p>
+<p>One of the more interesting administration changes for macOS is the synthetic.conf <strong>file</strong>—a tool that gives you control over creating “virtual” directory mounts in the root filesystem. Whether you’re mapping an SMB share, adding an NFS mount, or creating a placeholder directory, this utility offers power, flexibility, and some unexpected quirks.</p>
+<p><strong>What Exactly is synthetic.conf Used For?</strong></p>
+<p>The synthetic.conf file allows macOS users to define non-existent directories or symbolic links in the root filesystem. The system processes this file during boot, making it ideal for creating mounts for network shares like SMB or NFS. It’s a lightweight way to automate mounting without relying on external scripts or tools.</p>
+<p>However, like any good story, there’s a twist: changes to synthetic.conf require a system reboot to take effect. Yes, even in 2025, we still reboot computers for things like this. Consider it macOS’s way of saying, “Don’t forget your coffee break.”</p>
+<p><strong>What You Need to Know</strong></p>
+<p>1.<strong>Reboot Required</strong></p>
+<p>Unlike /etc/fstab on Linux, changes to synthetic.conf aren’t dynamically loaded. You’ll need to reboot the system for macOS to recognize your modifications. No exceptions. Yes, it’s inconvenient, but it’s also a great excuse grab some coffee.</p>
+<p>2.<strong>Path Limitations</strong></p>
+<p>The directories you define are limited to the root filesystem. If you’re trying to get creative and define paths deep within /Volumes or /Users, this isn’t the tool for you. Instead, define the mounts like you normally would. You can, however, use the automount information on this page.</p>
+<p>3.<strong>Permissions Confusion</strong></p>
+<p>Permissions for your mounted share absolutely depend on how you configured the mount. Test it to make sure your users have the correct access. I suggest using the Finder &ldquo;Connect to Server&rdquo; (Command-K) to test connectivity before going too deep.</p>
+<p><strong>Example: Automatically Mounting an SMB Share to /external</strong></p>
+<p>Here’s a real world example: let’s say you have a Synology NAS at 192.168.4.20 with an SMB share called <code>shared\_folder</code>. You want it to be accessible at <code>/external</code> on your Mac. Here’s how to configure it:</p>
+<p><strong>Step 1: Update synthetic.conf</strong></p>
+<p>Edit (or create) the file <code>/etc/synthetic.conf</code> with the following content:</p>
+<pre tabindex="0"><code>external
+</code></pre><p>This tells macOS to create a directory called <code>/external</code> at boot.</p>
+<p><strong>Step 2: Create an Automount Configuration</strong></p>
+<p>Next, create a <code>/etc/auto\_smb</code> file with the automount configuration:</p>
+<pre tabindex="0"><code>/external -fstype=smbfs ://username:password@192.168.4.20/shared\_folder
+</code></pre><p>Replace username and password with the credentials to access your SMB share. You might need URL encoding for special characters if necessary.</p>
+<p><strong>Step 3: Update /etc/auto_master</strong></p>
+<p>Append the following line to <code>/etc/auto\_master</code>:</p>
+<pre tabindex="0"><code>/-    /etc/auto\_smb
+</code></pre><p>This tells macOS to use the custom <code>auto\_smb</code> file for mounting directories.</p>
+<p><strong>Step 4: Reload Automount and Reboot</strong></p>
+<p>Finally, reload automount to test and reboot the system to apply the changes:</p>
+<pre tabindex="0"><code>sudo automount -vc
+sudo reboot
+</code></pre><p>Once your system is back online, your SMB share should be mounted at <code>/external</code>.</p>
+<p><strong>Closing Thoughts</strong></p>
+<p>While <code>synthetic.conf</code> and coupling with automount is excellent for network shares, they are different than just setting the <code>fstab</code> and calling it good. Some patience—and maybe some trial and error—you’ll have your macOS system humming along with network shares seamlessly integrated.</p>
+<p>And hey, if nothing else, the reboot requirement might remind you that sometimes a fresh start is exactly what you need—both for your system and your day.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+                </div>
+            </div><footer class="footer">
+  <div class="has-text-centered">
+    <layer>
+      
+        
+          
+          <a class="footer-social" href="https://linkedin.com/in/alloydwhitlock"><i class='fab fa-linkedin fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://github.com/alloydwhitlock"><i class='fab fa-github fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://www.discogs.com/user/alloydwhitlock"><i class='fas fa-record-vinyl'></i></a>
+          
+        
+      
+    </layer>
+    <layer>
+      <p>
+        
+        Website theme is <a class="has-text-weight-semibold" href="http://github.com/alloydwhitlock/huey">Huey</a> by <a class="has-text-weight-semibold" href="https://adamwhitlock.com">Adam Whitlock</a>.
+      </p>
+      <p>
+         &copy; 2025 Adam Whitlock
+      </p>
+    </layer>
+  </div>
+</footer></div><script async src="//static.getclicky.com/101349619.js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101349619ns.gif" /></p></noscript></body>
+</html>
