@@ -74,7 +74,7 @@
           <h1 class="title is-3">Structure Files: Helping AI Navigate Your Codebase Without Getting Lost</h1>
           <h2 class="subtitle is-5"><time>November 17, 2024</time></h2>
           <p class="subtitle is-4">Learn how structure files can help AI tools better understand and navigate your codebase, leading to more accurate and efficient AI-assisted development.</p>
-          <p>We&rsquo;ve been promised a future where AI writes our code, fixes our bugs, and maybe even makes our coffee. But right now? Most of us are still spending way too much time explaining our codebases to AI assistants that seem to have the attention span of a caffeinated squirrel.</p>
+          <p>We&rsquo;ve been promised a future in which AI writes our code, fixes our bugs, and maybe even makes our coffee. But right now? Most of us are still spending far too much time explaining our codebases to AI assistants that seem to have the attention span of a caffeinated squirrel.</p>
 <p>Let me paint a familiar scene: You ask your AI to add a new API endpoint. It responds by cheerfully rewriting your authentication system, completely missing your existing patterns, and somehow managing to reference a CSS file that hasn&rsquo;t existed since 2019.</p>
 <p>What if we could fix that? Not with more prompts or tokens, but with something simpler: a map for your AI to follow.</p>
 <p>Enter <strong>structure files</strong>.</p>
@@ -119,12 +119,12 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Human: &#34;Add an endpoint to create new widgets&#34;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>AI: &#34;I&#39;ll create a new endpoint. Here&#39;s a Flask route...&#34;
-</span></span><span style="display:flex;"><span>*Proceeds to write code that ignores existing patterns, 
+</span></span><span style="display:flex;"><span>*Proceeds to write code that ignores existing patterns,
 </span></span><span style="display:flex;"><span>misses authentication, and creates inconsistent response formats*
 </span></span></code></pre></div><p><strong>With Structure File:</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Human: &#34;Add an endpoint to create new widgets&#34;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AI: &#34;I&#39;ll create a new endpoint following the pattern in /api/v1/users.py. 
+</span></span><span style="display:flex;"><span>AI: &#34;I&#39;ll create a new endpoint following the pattern in /api/v1/users.py.
 </span></span><span style="display:flex;"><span>I see we need:
 </span></span><span style="display:flex;"><span>1. Bearer token authentication (from /auth/middleware.py)
 </span></span><span style="display:flex;"><span>2. Validation against schema.yaml
@@ -132,7 +132,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Here&#39;s the implementation...&#34;
 </span></span><span style="display:flex;"><span>*Generates code that perfectly matches existing patterns*
-</span></span></code></pre></div><p>The difference? Night and day.</p>
+</span></span></code></pre></div><p>The difference is significant.</p>
 <h2 id="getting-started-your-first-structure-file">Getting Started: Your First Structure File</h2>
 <p>Let&rsquo;s create one, step by step:</p>
 <ol>
@@ -169,12 +169,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">validate_structure</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;structure.yaml&#39;</span>) <span style="color:#66d9ef">as</span> f:
 </span></span><span style="display:flex;"><span>        structure <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>safe_load(f)
-</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Validate all paths exist</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> directory <span style="color:#f92672">in</span> structure[<span style="color:#e6db74">&#39;key-directories&#39;</span>]:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> Path(directory[<span style="color:#e6db74">&#39;path&#39;</span>])<span style="color:#f92672">.</span>exists():
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Path </span><span style="color:#e6db74">{</span>directory[<span style="color:#e6db74">&#39;path&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> not found&#34;</span>)
-</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Validate versions match package.json/requirements.txt</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Add your own validation logic here</span>
 </span></span></code></pre></div><h2 id="enterprise-scale-considerations">Enterprise-Scale Considerations</h2>
@@ -274,14 +274,14 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">eslint</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">config</span>: <span style="color:#e6db74">&#34;.eslintrc&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">relation</span>: <span style="color:#e6db74">&#34;Structure file paths should match ignore patterns&#34;</span>
-</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">jest</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">config</span>: <span style="color:#e6db74">&#34;jest.config.js&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">test-paths</span>: [<span style="color:#e6db74">&#34;__tests__&#34;</span>, <span style="color:#e6db74">&#34;*.test.js&#34;</span>]
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">prettier</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">config</span>: <span style="color:#e6db74">&#34;.prettierrc&#34;</span>
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">vscode</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">workspace-settings</span>: <span style="color:#e6db74">&#34;.vscode/settings.json&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">recommended-extensions</span>: <span style="color:#e6db74">&#34;.vscode/extensions.json&#34;</span>

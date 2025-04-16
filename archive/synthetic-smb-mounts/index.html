@@ -75,19 +75,19 @@
           <h2 class="subtitle is-5"><time>January 2, 2025</time></h2>
           <p class="subtitle is-4">The rhythm is the mount, and the mount is the trouble</p>
           <p><strong>macOS Automounts with synthetic.conf</strong></p>
-<p>One of the more interesting administration changes for macOS is the <code>/etc/synthetic.conf</code> file — a tool that gives you control over creating “virtual” directory mounts in the root filesystem. Whether you’re mapping an SMB share, adding an NFS mount, or creating a placeholder directory, this utility offers power, flexibility, and some unexpected quirks.</p>
+<p>One of the more interesting administration changes for macOS is the <code>/etc/synthetic.conf</code> file — a tool that gives you control over creating &ldquo;virtual&rdquo; directory mounts in the root filesystem. Whether you&rsquo;re mapping an SMB share, adding an NFS mount, or creating a placeholder directory, this utility offers power, flexibility, and some unexpected quirks.</p>
 <p><strong>What Exactly is synthetic.conf Used For?</strong></p>
-<p>The synthetic.conf file allows macOS users to define non-existent directories or symbolic links in the root filesystem. The system processes this file during boot, making it ideal for creating mounts for network shares like SMB or NFS. It’s a lightweight way to automate mounting without relying on external scripts or tools.</p>
-<p>However, like any good story, there’s a twist: changes to synthetic.conf require a system reboot to take effect. Yes, even in 2025, we still reboot computers for things like this. Consider it macOS’s way of saying, “Don’t forget your coffee break.”</p>
+<p>The synthetic.conf file allows macOS users to define non-existent directories or symbolic links in the root filesystem. The system processes this file during boot, making it ideal for creating mounts for network shares like SMB or NFS. It&rsquo;s a lightweight way to automate mounting without relying on external scripts or tools.</p>
+<p>However, like any good story, there&rsquo;s a twist: changes to synthetic.conf require a system reboot to take effect. Yes, even in 2025, we still reboot computers for things like this. Consider it macOS&rsquo;s way of saying, &ldquo;Don&rsquo;t forget your coffee break.&rdquo;</p>
 <p><strong>What You Need to Know</strong></p>
 <p>1.<strong>Reboot Required</strong></p>
-<p>Unlike /etc/fstab on Linux, changes to synthetic.conf aren’t dynamically loaded. You’ll need to reboot the system for macOS to recognize your modifications. No exceptions. Yes, it’s inconvenient, but it’s also a great excuse grab some coffee.</p>
+<p>Unlike /etc/fstab on Linux, changes to synthetic.conf aren&rsquo;t dynamically loaded. You&rsquo;ll need to reboot the system for macOS to recognize your modifications. No exceptions. Yes, it&rsquo;s inconvenient, but it&rsquo;s also a great excuse to grab some coffee.</p>
 <p>2.<strong>Path Limitations</strong></p>
-<p>The directories you define are limited to the root filesystem. If you’re trying to get creative and define paths deep within /Volumes or /Users, this isn’t the tool for you. Instead, define the mounts like you normally would. You can, however, use the automount information on this page.</p>
+<p>The directories you define are limited to the root filesystem. If you&rsquo;re trying to get creative and define paths deep within /Volumes or /Users, this isn&rsquo;t the tool for you. Instead, define the mounts like you normally would. You can, however, use the automount information on this page.</p>
 <p>3.<strong>Permissions Confusion</strong></p>
 <p>Permissions for your mounted share absolutely depend on how you configured the mount. Test it to make sure your users have the correct access. I suggest using the Finder &ldquo;Connect to Server&rdquo; (Command-K) to test connectivity before going too deep.</p>
 <p><strong>Example: Automatically Mounting an SMB Share to /external</strong></p>
-<p>Here’s a real world example: let’s say you have a Synology NAS at 192.168.4.20 with an SMB share called <code>shared\_folder</code>. You want it to be accessible at <code>/external</code> on your Mac. Here’s how to configure it:</p>
+<p>Here&rsquo;s a real world example: let&rsquo;s say you have a Synology NAS at 192.168.4.20 with an SMB share called <code>shared\_folder</code>. You want it to be accessible at <code>/external</code> on your Mac. Here&rsquo;s how to configure it:</p>
 <p><strong>Step 1: Update synthetic.conf</strong></p>
 <p>Edit (or create) the file <code>/etc/synthetic.conf</code> with the following content:</p>
 <pre tabindex="0"><code>external
@@ -98,7 +98,7 @@
 </code></pre><p>Replace username and password with the credentials to access your SMB share. You might need URL encoding for special characters if necessary.</p>
 <p><strong>Step 3: Update /etc/auto_master</strong></p>
 <p>Append the following line to <code>/etc/auto\_master</code>:</p>
-<pre tabindex="0"><code>/-    /etc/auto\_smb
+<pre tabindex="0"><code>/-    /etc/auto\_smb
 </code></pre><p>This tells macOS to use the custom <code>auto\_smb</code> file for mounting directories.</p>
 <p><strong>Step 4: Reload Automount and Reboot</strong></p>
 <p>Finally, reload automount to test and reboot the system to apply the changes:</p>
@@ -106,7 +106,7 @@
 sudo reboot
 </code></pre><p>Once your system is back online, your SMB share should be mounted at <code>/external</code>.</p>
 <p><strong>Closing Thoughts</strong></p>
-<p>While <code>synthetic.conf</code> and coupling with automount is excellent for network shares, they are different than just setting the <code>fstab</code> and calling it good. Some patience—and maybe some trial and error—you’ll have your macOS system humming along with network shares seamlessly integrated.</p>
+<p>While <code>synthetic.conf</code> and coupling with automount is excellent for network shares, they are different from just setting the <code>fstab</code> and calling it good. With some patience—and maybe some trial and error—you&rsquo;ll have your macOS system humming along with network shares seamlessly integrated.</p>
 <p>And hey, if nothing else, the reboot requirement might remind you that sometimes a fresh start is exactly what you need—both for your system and your day.</p>
 
         </div>
