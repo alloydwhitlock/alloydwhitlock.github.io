@@ -85,12 +85,18 @@
             <p class="title"><a class="nope" href="https://adamwhitlock.com/archive/synthetic-smb-mounts/">Mount Up: Regulate Root-Level Automounts With Synthetic.conf</a></p>
 
             <div class="content">
-              <h2 class="subtitle is-5"><time>January 2, 2025</time></h2>
+              <h2 class="subtitle is-5"><time>January 3, 2025 / Updated January 3, 2026</time></h2>
               <p class="subtitle is-4">The rhythm is the mount, and the mount is the trouble</p>
-              <p><p><strong>macOS Automounts with synthetic.conf</strong></p>
-<p>One of the more interesting administration changes for macOS is the <code>/etc/synthetic.conf</code> file — a tool that gives you control over creating &ldquo;virtual&rdquo; directory mounts in the root filesystem. Whether you&rsquo;re mapping an SMB share, adding an NFS mount, or creating a placeholder directory, this utility offers power, flexibility, and some unexpected quirks.</p>
-<p><strong>What Exactly is synthetic.conf Used For?</strong></p>
-<p>The synthetic.conf file allows macOS users to define non-existent directories or symbolic links in the root filesystem. The system processes this file during boot, making it ideal for creating mounts for network shares like SMB or NFS. It&rsquo;s a lightweight way to automate mounting without relying on external scripts or tools.</p></p>
+              <p><h2 id="a-word-about-system-integrity-protection">A Word About System Integrity Protection</h2>
+<p>If you&rsquo;re running macOS 26 or later, this approach requires disabling System Integrity Protection (SIP). I want to be clear about this upfront: disabling SIP is a bad security practice. It removes protections that Apple built into macOS to prevent unauthorized system modifications.</p>
+<p><strong>To disable SIP:</strong></p>
+<ol>
+<li>Reboot into Recovery Mode (hold Command-R during startup)</li>
+<li>Open Terminal from the Utilities menu</li>
+<li>Run <code>csrutil disable</code></li>
+<li>Reboot again</li>
+</ol>
+<p>There are alternatives worth considering. Finder&rsquo;s &ldquo;Connect to Server&rdquo; (Command-K) works fine for most use cases, mounting shares under <code>/Volumes</code>. Third-party applications like Mountain Duck or ExpanDrive handle network mounts without requiring SIP to be disabled. But if you need that clean <code>/external</code> path at the root filesystem level, this is what it takes.</p></p>
               
               <div class="read-more">
                 <i class="fas fa fa-bookmark"></i><a class="is-italic" href="https://adamwhitlock.com/archive/synthetic-smb-mounts/"> Read More…</a>

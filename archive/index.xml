@@ -6,14 +6,14 @@
     <description>Recent content in Archive on Adam Whitlock</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adamwhitlock.com/archive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mount Up: Regulate root-level Automounts with synthetic.conf</title>
       <link>https://adamwhitlock.com/archive/synthetic-smb-mounts/</link>
-      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://adamwhitlock.com/archive/synthetic-smb-mounts/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;macOS Automounts with synthetic.conf&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;One of the more interesting administration changes for macOS is the &lt;code&gt;/etc/synthetic.conf&lt;/code&gt; file — a tool that gives you control over creating &amp;ldquo;virtual&amp;rdquo; directory mounts in the root filesystem. Whether you&amp;rsquo;re mapping an SMB share, adding an NFS mount, or creating a placeholder directory, this utility offers power, flexibility, and some unexpected quirks.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What Exactly is synthetic.conf Used For?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The synthetic.conf file allows macOS users to define non-existent directories or symbolic links in the root filesystem. The system processes this file during boot, making it ideal for creating mounts for network shares like SMB or NFS. It&amp;rsquo;s a lightweight way to automate mounting without relying on external scripts or tools.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;a-word-about-system-integrity-protection&#34;&gt;A Word About System Integrity Protection&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re running macOS 26 or later, this approach requires disabling System Integrity Protection (SIP). I want to be clear about this upfront: disabling SIP is a bad security practice. It removes protections that Apple built into macOS to prevent unauthorized system modifications.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;To disable SIP:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Reboot into Recovery Mode (hold Command-R during startup)&lt;/li&gt;&#xA;&lt;li&gt;Open Terminal from the Utilities menu&lt;/li&gt;&#xA;&lt;li&gt;Run &lt;code&gt;csrutil disable&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Reboot again&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;There are alternatives worth considering. Finder&amp;rsquo;s &amp;ldquo;Connect to Server&amp;rdquo; (Command-K) works fine for most use cases, mounting shares under &lt;code&gt;/Volumes&lt;/code&gt;. Third-party applications like Mountain Duck or ExpanDrive handle network mounts without requiring SIP to be disabled. But if you need that clean &lt;code&gt;/external&lt;/code&gt; path at the root filesystem level, this is what it takes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Microphone Settings for Zoom</title>
