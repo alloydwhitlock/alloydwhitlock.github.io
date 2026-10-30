@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head>
+    <title>The Observability Department of Everything : Adam Whitlock</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Reflections from a Whitlock" />
+    <meta name="dc.relation" content="https://adamwhitlock.com/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.d3da666ed9ed68d7ddcd192b882d21db9631617388ce5c8d8d37f54862ccd8ff.css" integrity="sha256-09pmbtntaNfdzRkriC0h25YxYXOIzlyNjTf1SGLM2P8=">
+
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/style.min.6f3a14bd01b83304e77630d040baec2b975905c1384ba4c806e573d55a4c0185.css" integrity="sha256-bzoUvQG4MwTndjDQQLrsK5dZBcE4S6TIBuVz1VpMAYU=">
+
+
+
+    
+    
+    <link rel="stylesheet" href="https://adamwhitlock.com/assets/css/extra.css" media="screen">
+    
+    
+    <script src="https://kit.fontawesome.com/818ce51a67.js" crossorigin="anonymous"></script>
+    
+
+    <script src="https://adamwhitlock.com/js/bulma.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://adamwhitlock.com/img/">
+</head><body>
+        <div id="container">
+<div class="container">
+<nav class="navbar is-transparent mb-4" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item title has-text-black" href="https://adamwhitlock.com/">Adam Whitlock</a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbar-menu" class="navbar-menu">
+    <div class="navbar-end">
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/"  >Home</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/archive/"  >Archive</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/coffee/"  >Coffee</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/bikes/"  >Bikes</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/about/"  >About</a>
+        
+        <a class="navbar-item" href="https://adamwhitlock.com/contact/"  >Contact</a>
+        
+    </div>
+  </div>
+</nav>
+</div><div class="container">
+                <div id="content">
+<main aria-role="main">
+  <div class="section">
+    <div class="columns">
+      <div class="column">
+        <figure class="image ">
+          
+        </figure>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <h1 class="title is-3">The Observability Department of Everything</h1>
+          <h2 class="subtitle is-5"><time>October 30, 2026</time></h2>
+          <p class="subtitle is-4">How observability teams inherit everyone else&#39;s reliability problems, and why owning the tools shouldn&#39;t mean owning the outcomes.</p>
+          <p>There&rsquo;s a peculiar thing that happens in engineering organizations where a team gradually becomes responsible for things nobody actually agreed they should own. No meeting, no RFC, no grand announcement. Just a series of perfectly reasonable requests that, taken together, become something profoundly unreasonable.</p>
+<p>Observability seems particularly susceptible to this.</p>
+<p>Someone needs a dashboard. Observability. Alerts aren&rsquo;t firing? Observability. SLOs? Obviously Observability. A service is slow and nobody knows why? Well, the logs are in <em>your</em> system. Congratulations. You now own the problem.</p>
+<h2 id="how-did-we-get-here">How Did We Get Here?</h2>
+<p>I&rsquo;ve spent a good portion of my career in Site Reliability Engineering, and more recently in Observability. I understand how we got here. Historically, observability tooling lived with SRE and infrastructure teams. Those engineers needed to understand what production systems were doing, and somebody had to keep Prometheus running and Grafana from consuming all available memory.</p>
+<p>But somewhere along the way, owning the tools became owning the outcomes. Apparently, if you can display a problem on a dashboard, you&rsquo;re responsible for solving it. By that logic, the weather app owes me an apology every time it rains.</p>
+<p>I suspect some of this comes from what we&rsquo;ve done to SRE itself. A discipline originally concerned with engineering better production systems has increasingly become associated with incident response, SLOs, and the administrative rituals surrounding reliability. The engineering work that originally made SRE interesting to me was getting inside production systems, understanding how they behaved, and making substantial changes to improve them. Not just measuring whether they were broken.</p>
+<p>SLOs are a good example. They&rsquo;re useful tools for prioritizing engineering work, but they&rsquo;re not the work itself. You can spend months defining user journeys, arguing about error budgets, and building beautiful dashboards without improving a single line of software. Meanwhile, your application is approaching a scaling limit, infrastructure costs are climbing, and somebody still has to manually restart a service every Thursday.</p>
+<p>At least the dashboards will look nice.</p>
+<h2 id="observability-is-engineering-too">Observability Is Engineering, Too</h2>
+<p>Observability has inherited much of this work because we own the machinery used to measure it. Once you&rsquo;re responsible for collecting metrics, it&rsquo;s apparently a small leap to deciding which metrics matter, setting thresholds, defining SLOs, and determining who should be paged. Eventually, you&rsquo;ve become responsible for the operational behavior of services you don&rsquo;t build, don&rsquo;t deploy, and barely understand.</p>
+<p>But observability is an engineering discipline in its own right. Moving billions of events through ingestion pipelines, dealing with backpressure, cardinality, storage, query performance, and the increasingly absurd cost of keeping all this data around is substantial engineering work. These are products we&rsquo;re building, with their own customers, architectural problems, and reliability requirements.</p>
+<p>There&rsquo;s a certain irony in expecting the observability team to make everyone else&rsquo;s systems reliable while giving them less time to improve their own. I&rsquo;m sure there&rsquo;s a dashboard somewhere that can tell us how that&rsquo;s going.</p>
+<h2 id="helping-isnt-owning">Helping Isn&rsquo;t Owning</h2>
+<p>None of this means observability engineers should barricade themselves behind a wall of dashboards and tell everyone to read the documentation. Quite the opposite. We should work alongside other engineers, improve instrumentation, understand their problems, and sometimes get into their application code to help solve them.</p>
+<p>But there&rsquo;s a difference between helping someone understand their system and becoming responsible for understanding it on their behalf.</p>
+<p>If your service is slow, our job is to make it possible for you to figure out why. If the metrics are missing, the logs are useless, or the query takes longer than the incident, that&rsquo;s on us. We&rsquo;ll fix it.</p>
+<p>The service being slow? That&rsquo;s still your service.</p>
+<h2 id="the-problem-with-being-helpful">The Problem With Being Helpful</h2>
+<p>I don&rsquo;t think anyone deliberately designed this arrangement. It&rsquo;s what happens when responsibility follows convenience rather than ownership. A few favors become expectations, expectations become process, and eventually nobody remembers things could work any other way. The more helpful the observability team becomes, the more likely it is to inherit the next vaguely related responsibility.</p>
+<p>I&rsquo;d rather we didn&rsquo;t let that happen. We should be building systems that make it easier for engineers to understand and improve their own software, not quietly relieving them of that responsibility.</p>
+<p>Because the last thing we need is another team that&rsquo;s exceptionally good at telling everyone their systems are broken, and too busy doing that to fix anything of its own.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+                </div>
+            </div><footer class="footer">
+  <div class="has-text-centered">
+    <layer>
+      
+        
+          
+          <a class="footer-social" href="https://linkedin.com/in/alloydwhitlock"><i class='fab fa-linkedin fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://github.com/alloydwhitlock"><i class='fab fa-github fa-lg'></i></a>
+          
+          <a class="footer-social" href="https://www.discogs.com/user/alloydwhitlock"><i class='fas fa-record-vinyl'></i></a>
+          
+        
+      
+    </layer>
+    <layer>
+      <p>
+        
+        Website theme is <a class="has-text-weight-semibold" href="https://github.com/alloydwhitlock/huey">Huey</a> by <a class="has-text-weight-semibold" href="https://adamwhitlock.com">Adam Whitlock</a>.
+      </p>
+      <p>
+         &copy; 2026 Adam Whitlock
+      </p>
+    </layer>
+  </div>
+</footer></div><script async src="//static.getclicky.com/101349619.js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101349619ns.gif" /></p></noscript></body>
+</html>
